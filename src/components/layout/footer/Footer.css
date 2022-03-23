@@ -1,0 +1,26 @@
+.container_footer {
+  height: calc(100vh-100px);
+  padding: 0 50px;
+  background-color: #222;
+  display: flex;
+}
+
+.item_footer {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.card_footer {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.item_footer {
+  font-size: 18px;
+  color: darkorange;
+}
+
+.text_footer {
+  color: lightgray;
+}
