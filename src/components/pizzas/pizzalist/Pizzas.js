@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { PizzaItems } from "../Pizzaitems/PizzaItems";
 
 import { Switch } from "antd";
-
 import "./Pizzas.css";
+// import ToggleButton from "../../layout/togglebutton/ToggleButton";
 
 export const Pizzas = ({ pizzaDetails }) => {
   return (
     <div className="container_pizzas">
       <h1>Our Menu</h1>
+      {/* <ToggleButton /> */}
       <p className="desc">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa mollitia
         deserunt magnam deleniti nobis? Quae cum autem corporis? Omnis
@@ -18,7 +19,7 @@ export const Pizzas = ({ pizzaDetails }) => {
         officiis? Deleniti, est ex libero dolorum minus magni blanditiis totam
         error unde!
       </p>
-
+      {/* <button className="button">Veg only</button> */}
       <div className="wrapper">
         {pizzaDetails.length > 0 && (
           <>
