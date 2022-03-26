@@ -1,4 +1,5 @@
 import React from "react";
+import Stars from "../../layout/ratingstars/Stars.tsx";
 
 import { FaStar } from "react-icons/fa";
 
@@ -28,9 +29,10 @@ export const PizzaItems = ({
         <div className="pizza_data">
           <h1 className="pizza_title">{name}</h1>
           <p className="pizza_desc">{description}</p>
-          {[...Array(5)].map((star) => {
+          <Stars rating={rating} />
+          {/* {[...Array(5)].map((star) => {
             return <FaStar color={"#ffc107"} value={rating} />;
-          })}
+          })} */}
           <p className="pizza_price">Rs {price}</p>
           <p className="pizza_title">
             {isVeg ? (

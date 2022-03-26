@@ -143,18 +143,22 @@ function renderValue(option: SelectOption<number> | null) {
     return <span>Sort pizzas by....</span>;
   }
 
-  return (
-    <span>
-      {option.label} ({option.value})
-    </span>
-  );
+  return <span>{option.label}</span>;
 }
+
+const sortByPrice = () => console.log("sort by price");
+
+const sortByRating = () => console.log("sort by Rating");
 
 export default function UnstyledSelectCustomRenderValue() {
   return (
     <CustomSelect renderValue={renderValue}>
-      <StyledOption value={10}>Price</StyledOption>
-      <StyledOption value={20}>Rating</StyledOption>
+      <div className="sort_price" onClick={sortByPrice}>
+        <StyledOption value={10}>Price</StyledOption>
+      </div>
+      <div className="sort_rating" onClick={sortByRating}>
+        <StyledOption value={20}>Rating</StyledOption>
+      </div>
     </CustomSelect>
   );
 }
