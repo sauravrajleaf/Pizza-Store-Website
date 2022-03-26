@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import MenuOption from "../../layout/dropdown/MenuOption.tsx";
+import SwitchButton from "../../layout/switch/SwtichButton.tsx";
 import { PizzaItems } from "../Pizzaitems/PizzaItems";
 
 import { Switch } from "antd";
@@ -20,6 +22,11 @@ export const Pizzas = ({ pizzaDetails }) => {
         error unde!
       </p>
       {/* <button className="button">Veg only</button> */}
+      <div className="filter_buttons">
+        <MenuOption />
+        <SwitchButton />
+      </div>
+
       <div className="wrapper">
         {pizzaDetails.length > 0 && (
           <>
