@@ -10,43 +10,45 @@ import "./Pizzas.css";
 let priceSortingCheck = false,
   ratingSortingCheck = false;
 export const Pizzas = ({ pizzaDetails }) => {
+  const [finalArray, setArray] = useState([]);
+  const [sortFeature, setSortFeature] = useState();
   const checkSortByPrice = (priceSorting) => {
     // console.log(priceSorting);
     priceSortingCheck = priceSorting;
-    checkRenderData(priceSortingCheck, ratingSortingCheck);
+    setSortFeature(priceSortingCheck);
   };
 
   const checkSortByRating = (ratingSorting) => {
     // console.log(ratingSorting);
     ratingSortingCheck = ratingSorting;
+    setSortFeature(ratingSortingCheck);
+  };
+  useEffect(() => {
+    const checkRenderData = (priceSortingCheck, ratingSortingCheck) => {
+      // console.log("inside check render data");
+      // console.log(priceSortingCheck, ratingSortingCheck);
+
+      let renderArray = pizzaDetails;
+      let dupl_arr_price, dupl_arr_rating;
+      if (priceSortingCheck) {
+        dupl_arr_price = pizzaDetails.sort((a, b) => a.price - b.price);
+      }
+
+      // console.log(dupl_arr_price);
+      if (ratingSortingCheck) {
+        dupl_arr_rating = pizzaDetails.sort((a, b) => a.rating - b.rating);
+      }
+
+      if (priceSortingCheck) renderArray = dupl_arr_price;
+      if (ratingSortingCheck) renderArray = dupl_arr_rating;
+      else renderArray = pizzaDetails;
+      console.log(renderArray);
+      setArray(renderArray);
+    };
+
     checkRenderData(priceSortingCheck, ratingSortingCheck);
-  };
-  const [finalArray, setArray] = useState([]);
+  }, [pizzaDetails, sortFeature]);
 
-  let renderArray = pizzaDetails;
-  const checkRenderData = (priceSortingCheck, ratingSortingCheck) => {
-    console.log("inside check render data");
-    console.log(priceSortingCheck, ratingSortingCheck);
-    const dupl_arr_price = pizzaDetails.sort((a, b) => a.price - b.price);
-    console.log(dupl_arr_price);
-    const dupl_arr_rating = pizzaDetails.sort((a, b) => a.rating - b.rating);
-    if (priceSortingCheck) renderArray = dupl_arr_price;
-    else if (ratingSortingCheck) renderArray = dupl_arr_rating;
-    else renderArray = pizzaDetails;
-    // console.log(renderArray);
-    setArray(renderArray);
-    return renderArray;
-  };
-
-  // useEffect(() => {
-  //   checkRenderData(priceSortingCheck, ratingSortingCheck);
-  // }, []);
-  // console.log(
-  //   pizzaDetails.sort((a, b) => {
-  //     return a.price - b.price;
-  //   })
-  // );
-  // console.log(finalArray);
   return (
     <div className="container_pizzas">
       <h1>Our Menu</h1>
@@ -77,8 +79,6 @@ export const Pizzas = ({ pizzaDetails }) => {
             ))}
           </>
         }
-        {/* {dupl_arr_price} */}
-        {/* {dupl_arr_rating} */}
       </div>
     </div>
   );
