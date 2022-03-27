@@ -20,6 +20,7 @@ export const PizzaItems = ({
     toppings,
   },
 }) => {
+  // console.log("hey");
   return (
     <div className="container_pizzaitems">
       <ul className="pizza_list">

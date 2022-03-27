@@ -22,7 +22,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     fetchPost();
-  }, []);
+  }, [pizzaDetails]);
   return (
     <div>
       <Pizzas pizzaDetails={pizzaDetails} />

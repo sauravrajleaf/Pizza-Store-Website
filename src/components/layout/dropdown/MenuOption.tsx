@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+
 import SelectUnstyled, {
   SelectUnstyledProps,
   selectUnstyledClasses,
@@ -146,11 +147,27 @@ function renderValue(option: SelectOption<number> | null) {
   return <span>{option.label}</span>;
 }
 
-const sortByPrice = () => console.log("sort by price");
+export default function UnstyledSelectCustomRenderValue(props) {
+  const [sortPrice, clickedSortPrice] = useState("");
+  const [sortRating, clickedSortRating] = useState("");
 
-const sortByRating = () => console.log("sort by Rating");
+  const sortByPrice = () => {
+    // console.log("sort by price");
+    clickedSortPrice("true");
+  };
 
-export default function UnstyledSelectCustomRenderValue() {
+  // useEffect(() => {
+  //   clickedSortPrice("true");
+  // }, []);
+
+  const sortByRating = () => {
+    // console.log("sort by Rating");
+    clickedSortRating("true");
+  };
+
+  props.checkSortByPrice(sortPrice);
+  props.checkSortByRating(sortRating);
+
   return (
     <CustomSelect renderValue={renderValue}>
       <div className="sort_price" onClick={sortByPrice}>

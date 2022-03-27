@@ -12,7 +12,7 @@ export default function BasicRating({ rating }) {
         "& > legend": { mt: 2 },
       }}
     >
-      <Rating name="read-only" value={rating} readOnly />
+      <Rating name="read-only" value={rating} readOnly precision={0.5} />
     </Box>
   );
 }
