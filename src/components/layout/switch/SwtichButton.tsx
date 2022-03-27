@@ -1,22 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-
-let check_nonVeg = false,
-  check_Veg = false;
-
-const nonVeg = () => {
-  check_nonVeg = true;
-  console.log("Non Veg Filter Enabled");
-};
-const Veg = () => {
-  if (check_nonVeg) check_Veg = true;
-  console.log("Veg Filter Enabled");
-};
 
 const VEGSwitch = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -119,7 +107,25 @@ const NONVEGSwitch = styled((props: SwitchProps) => (
   },
 }));
 
-export default function CustomizedSwitches() {
+export default function CustomizedSwitches(props) {
+  let check_nonVeg = false,
+    check_Veg = false;
+
+  const [filterVeg, clickedVeg] = useState(false);
+  const [filterNonVeg, clickedNonVeg] = useState(false);
+
+  const nonVeg = () => {
+    check_nonVeg = true;
+    // console.log("Non Veg Filter Enabled");
+    clickedNonVeg(true);
+  };
+  const Veg = () => {
+    if (check_nonVeg) check_Veg = true;
+    // console.log("Veg Filter Enabled");
+    clickedVeg(true);
+  };
+  props.checkVegFilter(filterVeg);
+  props.checkNonVegFilter(filterNonVeg);
   return (
     <FormGroup>
       <FormControlLabel

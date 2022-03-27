@@ -9,9 +9,15 @@ import "./Pizzas.css";
 
 let priceSortingCheck = false,
   ratingSortingCheck = false;
+
+let vegFilterCheck = false,
+  nonVegFilterCheck = false;
+
 export const Pizzas = ({ pizzaDetails }) => {
   const [finalArray, setArray] = useState([]);
   const [sortFeature, setSortFeature] = useState();
+  const [filterFeature, setFilterFeature] = useState();
+
   const checkSortByPrice = (priceSorting) => {
     // console.log(priceSorting);
     priceSortingCheck = priceSorting;
@@ -23,6 +29,21 @@ export const Pizzas = ({ pizzaDetails }) => {
     ratingSortingCheck = ratingSorting;
     setSortFeature(ratingSortingCheck);
   };
+
+  const checkVegFilter = (vegFilter) => {
+    // console.log(priceSorting);
+    vegFilterCheck = vegFilter;
+    setFilterFeature(vegFilterCheck);
+    console.log(vegFilterCheck);
+  };
+
+  const checkNonVegFilter = (nonVegFilter) => {
+    // console.log(priceSorting);
+    nonVegFilterCheck = nonVegFilter;
+    setFilterFeature(nonVegFilterCheck);
+    // console.log(nonVegFilterCheck);
+  };
+
   useEffect(() => {
     const checkRenderData = (priceSortingCheck, ratingSortingCheck) => {
       // console.log("inside check render data");
@@ -42,25 +63,46 @@ export const Pizzas = ({ pizzaDetails }) => {
       if (priceSortingCheck) renderArray = dupl_arr_price;
       if (ratingSortingCheck) renderArray = dupl_arr_rating;
       else renderArray = pizzaDetails;
+      // console.log(renderArray);
+      setArray(renderArray);
+    };
+
+    const checkFilterRenderData = (vegFilterCheck, nonVegFilterCheck) => {
+      let renderArray = pizzaDetails;
+      let dupl_arr_veg, dupl_arr_nonveg;
+      if (vegFilterCheck) {
+        dupl_arr_veg = pizzaDetails.filter((pizza) => pizza.isVeg === true);
+        console.log(dupl_arr_veg);
+      }
+
+      if (nonVegFilterCheck) {
+        dupl_arr_nonveg = pizzaDetails.filter((pizza) => pizza.isVeg === false);
+      }
+
+      if (vegFilterCheck) renderArray = dupl_arr_veg;
+      if (nonVegFilterCheck) renderArray = dupl_arr_nonveg;
+
       console.log(renderArray);
       setArray(renderArray);
     };
 
     checkRenderData(priceSortingCheck, ratingSortingCheck);
-  }, [pizzaDetails, sortFeature]);
+    checkFilterRenderData(vegFilterCheck, nonVegFilterCheck);
+  }, [pizzaDetails, sortFeature, filterFeature]);
 
   return (
     <div className="container_pizzas">
       <h1>Our Menu</h1>
 
       <p className="desc">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa mollitia
-        deserunt magnam deleniti nobis? Quae cum autem corporis? Omnis
-        repudiandae eveniet praesentium vitae harum magni modi sint optio,
-        aliquid corrupti! Libero officiis vero natus illo veritatis quia magnam
-        vitae aliquid. Exercitationem nihil a ullam repellendus eos? Totam, sed
-        officiis? Deleniti, est ex libero dolorum minus magni blanditiis totam
-        error unde!
+        Pizza is a worldwide favorite. The reason for pizza spread is that you
+        can add anything to it and eat it anytime of the day and anywhere. The
+        pizza originated in Italy and it is one of the favorite foods for adults
+        and children. It was originally dough with topping of any ingredients as
+        meat or vegetables that baked in the oven. Pizza developed to become
+        more organized as Italians added sauce, cheese mozzarella and many other
+        types of cheese. Such new way moved from Italy to other countries by
+        Italian immigrants.
       </p>
 
       <div className="filter_buttons">
@@ -68,7 +110,10 @@ export const Pizzas = ({ pizzaDetails }) => {
           checkSortByPrice={checkSortByPrice}
           checkSortByRating={checkSortByRating}
         />
-        <SwitchButton />
+        <SwitchButton
+          checkVegFilter={checkVegFilter}
+          checkNonVegFilter={checkNonVegFilter}
+        />
       </div>
 
       <div className="wrapper">
