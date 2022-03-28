@@ -1,5 +1,4 @@
 import { Navbar } from "./components/layout/navbar/Navbar";
-import { Featured } from "./components/layout/featured/Featured";
 import { Footer } from "./components/layout/footer/Footer";
 import { HomePage } from "./components/pages/HomePage";
 
@@ -9,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Featured /> */}
+
       <HomePage />
       <Footer />
     </>

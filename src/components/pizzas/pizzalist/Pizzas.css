@@ -12,6 +12,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+.sort_filter_buttons {
+  display: flex;
+}
 .desc {
   font-size: 22px;
   color: #444;

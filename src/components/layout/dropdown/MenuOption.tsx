@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import SelectUnstyled, {
   SelectUnstyledProps,
@@ -147,7 +147,10 @@ function renderValue(option: SelectOption<number> | null) {
   return <span>{option.label}</span>;
 }
 
-export default function UnstyledSelectCustomRenderValue(props) {
+export default function UnstyledSelectCustomRenderValue(
+  props,
+  { checkClearFilter }
+) {
   const [sortPrice, clickedSortPrice] = useState("");
   const [sortRating, clickedSortRating] = useState("");
 
@@ -157,7 +160,9 @@ export default function UnstyledSelectCustomRenderValue(props) {
   };
 
   // useEffect(() => {
-  //   clickedSortPrice("true");
+  //   if(checkClearFilter){
+  //     renderValue(option: SelectOption<number> | null)
+  //   }
   // }, []);
 
   const sortByRating = () => {
@@ -170,6 +175,9 @@ export default function UnstyledSelectCustomRenderValue(props) {
 
   return (
     <CustomSelect renderValue={renderValue}>
+      <div className="sort_price" onClick={sortByPrice}>
+        <StyledOption value={10}>Sort pizzas by....</StyledOption>
+      </div>
       <div className="sort_price" onClick={sortByPrice}>
         <StyledOption value={10}>Price</StyledOption>
       </div>

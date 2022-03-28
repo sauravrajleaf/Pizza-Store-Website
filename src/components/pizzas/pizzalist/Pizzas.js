@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MenuOption from "../../layout/dropdown/MenuOption.tsx";
 import SwitchButton from "../../layout/switch/SwtichButton.tsx";
+import Button from "../../layout/button/Button.tsx";
 import { PizzaItems } from "../Pizzaitems/PizzaItems";
 
 import { Switch } from "antd";
@@ -42,6 +43,13 @@ export const Pizzas = ({ pizzaDetails }) => {
     nonVegFilterCheck = nonVegFilter;
     setFilterFeature(nonVegFilterCheck);
     // console.log(nonVegFilterCheck);
+  };
+
+  const checkClearFilter = (checkValue) => {
+    if (checkValue) {
+      console.log("CLICKED");
+      return true;
+    }
   };
 
   useEffect(() => {
@@ -106,10 +114,15 @@ export const Pizzas = ({ pizzaDetails }) => {
       </p>
 
       <div className="filter_buttons">
-        <MenuOption
-          checkSortByPrice={checkSortByPrice}
-          checkSortByRating={checkSortByRating}
-        />
+        <div className="sort_filter_buttons">
+          <MenuOption
+            checkSortByPrice={checkSortByPrice}
+            checkSortByRating={checkSortByRating}
+            checkClearFilter={checkClearFilter}
+          />
+          <Button checkClearFilter={checkClearFilter} />
+        </div>
+
         <SwitchButton
           checkVegFilter={checkVegFilter}
           checkNonVegFilter={checkNonVegFilter}
