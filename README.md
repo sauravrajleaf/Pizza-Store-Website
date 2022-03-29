@@ -1,7 +1,7 @@
-# Pizza Store Website[WIP]
+# Pizza Store Website[WIP] 🍕
 It fetches the list of the pizzas in the form of array of objects using this API(https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68). 
 
-# Screenshots from localhost
+# Screenshots from localhost 😃
 
 It displays the items fetched from the API.![Screenshot_Mozilla Firefox_17](https://user-images.githubusercontent.com/52833031/160695580-3023cb47-b43e-42c0-bfc1-4ea25b5a61e9.png)
 
@@ -18,6 +18,10 @@ It displays the items fetched from the API.![Screenshot_Mozilla Firefox_17](http
 * Have to work on toggling between veg & non veg options. IOnly one option can be toggle on at a time.
 * Have to work on add toppings & add to cart feature.
 * Have to enable working of the cart menu. 
+
+# Error facing in build 😢
+Feel free to give advice on what I am doing wrong.
+![Screenshot_Mozilla Firefox_23](https://user-images.githubusercontent.com/52833031/160698282-ed4a959e-62f8-4f27-aa2c-6085fd9a7777.png)
 
 
 # How to run a react application
