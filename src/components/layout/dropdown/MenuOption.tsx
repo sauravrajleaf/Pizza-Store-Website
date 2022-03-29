@@ -176,9 +176,6 @@ export default function UnstyledSelectCustomRenderValue(
   return (
     <CustomSelect renderValue={renderValue}>
       <div className="sort_price" onClick={sortByPrice}>
-        <StyledOption value={10}>Sort pizzas by....</StyledOption>
-      </div>
-      <div className="sort_price" onClick={sortByPrice}>
         <StyledOption value={10}>Price</StyledOption>
       </div>
       <div className="sort_rating" onClick={sortByRating}>
