@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# Pizza Store Website[WIP]
+It fetches the list of the pizzas in the form of array of objects using this API(https://run.mocky.io/v3/ec196a02-aaf4-4c91-8f54-21e72f241b68). 
+
+# Screenshots from localhost
+
+It displays the items fetched from the API.![Screenshot_Mozilla Firefox_17](https://user-images.githubusercontent.com/52833031/160695580-3023cb47-b43e-42c0-bfc1-4ea25b5a61e9.png)
+
+## Sorting by price & rating feature implemented.![Screenshot_Mozilla Firefox_19](https://user-images.githubusercontent.com/52833031/160695730-807db0a0-6d37-4b57-8527-1876ceb40134.png)
+
+## Filtering feature between the items as Veg & Non-Veg.![Screenshot_Mozilla Firefox_20](https://user-images.githubusercontent.com/52833031/160696053-4ef4878a-25a9-47ee-affc-bc47cef9b0b1.png)
+![Screenshot_Mozilla Firefox_22](https://user-images.githubusercontent.com/52833031/160696093-277c4727-44c8-4d39-ab79-d921dd634645.png)
+
+
+# Things left to do
+* Fixing minor bug related to CSS of footer in build. 
+* Making links to all the navs menu.
+* Implementing Clear filter feature.
+* Have to work on toggling between veg & non veg options. IOnly one option can be toggle on at a time.
+* Have to work on add toppings & add to cart feature.
+* Have to enable working of the cart menu. 
+
+
+# How to run a react application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -27,44 +49,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
