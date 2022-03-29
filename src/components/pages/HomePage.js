@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { Pizzas } from "../pizzas/pizzalist/Pizzas";
-// import { Featured } from "../layout/featured/Featured";
 
 export const HomePage = () => {
   const [pizzaDetails, setData] = useState([]);
@@ -25,8 +24,6 @@ export const HomePage = () => {
   }, [pizzaDetails]);
   return (
     <div>
-      {/* <Featured pizzas={pizzaDetails} /> */}
-
       <Pizzas pizzaDetails={pizzaDetails} />
     </div>
   );
