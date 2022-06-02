@@ -5,13 +5,13 @@ import { HomePage } from "./components/pages/HomePage";
 import "./App.css";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <HomePage />
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<HomePage />
+			{/* <Footer /> */}
+		</>
+	);
 }
 
 export default App;
